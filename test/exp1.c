@@ -2,12 +2,11 @@
 #include <ctype.h>
 #include <string.h>
 
-int iskeyword(char buffer[])
+int isKey(char buffer[])
 {
     char keywords[][10] = {"int", "char", "void", "main", "printf", "include", "stdio"};
-    int numKeywords = sizeof(keywords) / sizeof(keywords[0]);
 
-    for (int i = 0; i < numKeywords; i++)
+    for (int i = 0; i < 7; i++)
     {
         if (strcmp(keywords[i], buffer) == 0)
         {
@@ -15,12 +14,6 @@ int iskeyword(char buffer[])
         }
     }
     return 0;
-}
-
-int isDelimiter(char ch)
-{
-    char delimiters[] = " \t\n;(){}[],=+-*/%!<>&|\"";
-    return strchr(delimiters, ch) != NULL;
 }
 
 int main()
@@ -33,7 +26,7 @@ int main()
 
     if (fp == NULL)
     {
-        printf("File not found!\n");
+        printf("No File");
         return 1;
     }
 

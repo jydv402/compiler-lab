@@ -3,5 +3,6 @@
 void main()
 {
     int a;
+    a = a + a;
     printf("hello");
 }
