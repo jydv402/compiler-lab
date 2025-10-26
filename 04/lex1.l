@@ -51,6 +51,6 @@ int main(int argc, char **argv)
 }
 int yywrap()
 {
-    return 0;
+    return 1;
 }
 

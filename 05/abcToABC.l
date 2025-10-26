@@ -19,6 +19,7 @@ int i;
 %%
 void main()
 {
+	printf("Enter the string : ");
 	yylex();
 }
 int yywrap()
