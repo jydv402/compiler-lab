@@ -2,7 +2,7 @@
 #include <string.h>
 #include <ctype.h>
 
-char input [200];
+char input[200];
 int i = 0, error = 0;
 
 void E();
@@ -47,7 +47,6 @@ void Eprime()
 		T();
 		Eprime();
 	}
-	
 }
 
 void Tprime()
@@ -62,15 +61,16 @@ void Tprime()
 
 void F()
 {
-	if(isalnum(input[i]))
+	if (isalnum(input[i]))
 	{
-		i++;
+		while (isalnum(input[i]))
+			i++;
 	}
-	else if(input[i]=='(')
+	else if (input[i] == '(')
 	{
 		i++;
 		E();
-		if(input[i] == ')')
+		if (input[i] == ')')
 			i++;
 		else
 			error = 1;
