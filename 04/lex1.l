@@ -21,9 +21,9 @@ while {printf("\n %s is a Keyword",yytext);}
 "/*" {COMMENT=1;}
 "*/" {COMMENT=0;}
 {identifier}\( {if(!COMMENT) printf("\n Function:\t %s",yytext);}
+{identifier}(\[[0-9]*\])? {if(!COMMENT) printf("\n %s is an Identifier",yytext);}
 "{" {if(!COMMENT) printf("\n Block Begins");}
 "}" {if(!COMMENT) printf("\n Block Ends");}
-{identifier}(\[[0-9]*\])? {if(!COMMENT) printf("\n %s is an Identifier",yytext);}
 \".*\" {if(!COMMENT) printf("\n %s is a String",yytext);}
 [0-9]+ {if(!COMMENT) printf("\n %s is a Number",yytext);}
 = {if(!COMMENT) printf("\n%s is an Assmt oprtr",yytext);}
@@ -38,8 +38,7 @@ int main(int argc, char **argv)
 {
     if(argc>1)
     {
-        FILE *file;
-        file=fopen(argv[1],"r");
+        FILE *file = fopen(argv[1],"r");
         if(!file)
         {
             printf("\n Could not open the file: %s",argv[1]);
