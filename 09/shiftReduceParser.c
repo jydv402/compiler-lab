@@ -2,7 +2,7 @@
 #include <string.h>
 #include <ctype.h>
 
-int k = 0, z = 0, i = 0, j = 0, c = 0;
+int z = 0, i = 0, j = 0, c = 0;
 char a[10], stk[20], ac[20];
 
 void reduce();
@@ -15,7 +15,7 @@ int main()
   c = strlen(a);
   printf("\nStack\tInput String\tAction");
   printf("\n$\t%s\t", a);
-  for (k = 0, i = 0; j < c; k++, i++, j++)
+  for (i = 0, j = 0; j < c; i++, j++)
   {
     strcpy(ac, "SHIFT->");
     if (a[j] == 'i' && a[j + 1] == 'd')
@@ -23,8 +23,10 @@ int main()
       stk[i] = a[j];
       stk[i + 1] = a[j + 1];
       stk[i + 2] = '\0';
+
       a[j] = ' ';
       a[j + 1] = ' ';
+
       printf("\n$%s\t%s$\t%sid", stk, a, ac);
       reduce();
     }
@@ -32,7 +34,9 @@ int main()
     {
       stk[i] = a[j];
       stk[i + 1] = '\0';
+
       a[j] = ' ';
+
       printf("\n$%s\t%s$\t%ssymbol", stk, a, ac);
       reduce();
     }

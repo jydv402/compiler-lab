@@ -1,5 +1,8 @@
 %{
 	#include <stdio.h>
+	#include <stdlib.h>
+	int yylex(void);
+	void yyerror(const char *s);
 	int flag = 0;
 %}
 
@@ -19,7 +22,7 @@ E:E'+'E	{$$=$1+$3;}
 | E'/'E	{$$=$1/$3;}
 | E'%'E	{$$=$1%$3;}
 | '('E')'	{$$=$2;}
-| NUMBER	{$$=$1;};
+| NUMBER	{$$=$1;}
 %%
 
 void main()
@@ -35,7 +38,7 @@ void main()
 	exit(0);
 }
 
-void yyerror()
+void yyerror(const char *s)
 {
 	flag = 1;
 	printf("\nInvalid\n");
