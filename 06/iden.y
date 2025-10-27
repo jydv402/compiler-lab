@@ -1,5 +1,8 @@
 %{
 #include <stdio.h>
+#include <stdlib.h>
+int yylex(void);
+void yyerror(const char *s);
 %}
 
 %token LETTER DIGIT
@@ -12,16 +15,16 @@ B:LETTER B;
 ;
 %%
 
-void main()
+int main()
 {
-	printf("Enter input string : ");
+	printf("Enter the identifier : ");
 	yyparse();
-	printf("VALID");
-	exit(0);
+	printf("VALID IDENTIFIER");
+	return 0;
 }
 
-void yyerror()
+void yyerror(const char *s)
 {
-	printf("Not valid identifier");
+	printf("INVALID IDENTIFIER");
 	exit(0);
 }
