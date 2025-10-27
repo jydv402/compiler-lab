@@ -1756,6 +1756,7 @@ void yyfree (void * ptr )
 
 void main()
 {
+	printf("Enter the string : ");
 	yylex();
 }
 int yywrap()
