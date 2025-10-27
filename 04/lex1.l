@@ -5,9 +5,10 @@
 
 identifier [a-zA-Z][a-zA-Z0-9]*
 %%
-#.* {printf ("\n %s is a Preprocessor Directive",yytext);}
+^#.* {printf ("\n %s is a Preprocessor Directive",yytext);}
 int |
 float |
+void |
 main |
 if |
 else |

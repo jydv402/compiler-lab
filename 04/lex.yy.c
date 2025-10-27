@@ -1889,6 +1889,7 @@ void yyfree (void * ptr )
 
 #line 34 "lex1.l"
 
+
 int main(int argc, char **argv)
 {
     if(argc>1)
@@ -1908,7 +1909,7 @@ int main(int argc, char **argv)
 }
 int yywrap()
 {
-    return 0;
+    return 1;
 }
 
 
