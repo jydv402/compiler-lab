@@ -1,2 +1,3 @@
 *.exe
-Tests/
+a.out
+# Tests/

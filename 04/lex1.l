@@ -32,6 +32,7 @@ while {printf("\n %s is a Keyword",yytext);}
 == {if(!COMMENT) printf("\n %s is a Rel. Operator",yytext);}
  .|\n
 %%
+
 int main(int argc, char **argv)
 {
     if(argc>1)
