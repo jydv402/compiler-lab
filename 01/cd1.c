@@ -20,12 +20,6 @@ int iskeyword(char buffer[])
     return 0;
 }
 
-int isDelimiter(char ch)
-{
-    char delimiters[] = " \t\n;(){}[],=+-*/%!<>&|\"";
-    return strchr(delimiters, ch) != NULL;
-}
-
 int main()
 {
     char ch;
