@@ -17,6 +17,7 @@ void main()
 	scanf("%s", input);
 
 	E();
+
 	if (strlen(input) == i && error == 0)
 	{
 		printf("\nInput is accepted\n");

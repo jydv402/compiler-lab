@@ -31,6 +31,12 @@ while {printf("\n %s is a Keyword",yytext);}
 \>= |
 \< |
 == {if(!COMMENT) printf("\n %s is a Rel. Operator",yytext);}
+\+ |
+\- |
+\* |
+\/ |
+\% |
+\^ {if(!COMMENT) printf("\n %s is a Arithmetic Operator",yytext);}
  .|\n
 %%
 

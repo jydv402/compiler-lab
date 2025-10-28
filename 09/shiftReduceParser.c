@@ -10,11 +10,15 @@ void reduce();
 int main()
 {
   printf("Grammer is:\nE->E+E\nE->E*E\nE->(E)\nE->id\n");
+
   printf("Enter the input string:");
   scanf("%s", a);
+
   c = strlen(a);
+
   printf("\nStack\tInput String\tAction");
   printf("\n$\t%s\t", a);
+
   for (i = 0, j = 0; j < c; i++, j++)
   {
     strcpy(ac, "SHIFT->");
